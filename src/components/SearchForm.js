@@ -14,12 +14,12 @@ export class SearchForm extends Component {
 
         const { inputMovie } = this.state;
 
-        const APIplusKey = 'https://www.omdbapi.com/?i=tt3896198&apikey=6e10393a'
+        const APIplusKey = 'https://www.omdbapi.com/?apikey=6e10393a'
 
         fetch(`${APIplusKey}&s=${inputMovie}`)
             .then(res => res.json())
             .then(res => {
-                const { Search, totalResults } = res;
+                const { Search = [], totalResults = "0" } = res;
                 
                 console.log({ Search, totalResults});
 
