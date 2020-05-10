@@ -8,7 +8,12 @@ class Detail extends Component {
     };
 
     static propTypes = {
-        id: PropTypes.string,
+        match: PropTypes.shape({
+            params: PropTypes.object,
+            isExact: PropTypes.bool,
+            path: PropTypes.string,
+            url: PropTypes.string,
+        })
     }
 
     //methods
@@ -31,7 +36,9 @@ class Detail extends Component {
     }
 
     componentDidMount() {
-        const { id } = this.props;
+        console.log(this.props);
+        
+        const { id } = this.props.match.params;
         console.log(id);
 
         this._fetchMovie({ id });
