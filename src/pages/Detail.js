@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+//components
+import { ButtonBackToHome } from '../components/ButtonBackToHome';
+
 class Detail extends Component {
 
     state = {
@@ -50,7 +53,7 @@ class Detail extends Component {
 
         return (
             <div>
-                <button onClick={this._goBack}>Volver</button>
+                <ButtonBackToHome/>
                 <h1>{Title}</h1>
                 <img src={Poster} alt={Title} />
                 <p>{Actors}</p>
